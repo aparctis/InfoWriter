@@ -1,5 +1,6 @@
 from tkinter import *
-from tkinter import ttk 
+from tkinter import ttk
+import pyperclip
 import postwriter
 
 root = Tk()
@@ -27,7 +28,7 @@ letterInfo.pack()
 #LETTER BUTTON FUNCTIONS
 def create_text():
 	global activeManager
-	letter_text = postText
+	letter_text = "postText"
 	letterInfo['text'] = postwriter.maintext
 	pyperclip.copy(letter_text)
 

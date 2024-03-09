@@ -40,20 +40,10 @@ weather_json = weather_request.json()
 _list = weather_json['list']
 
 def weather_hourly(hourIndex:int)->str:
-	weather_time = _list[0]['dt_txt'][11:16]
-	weather_sky = _list[0]['weather'][0]['description']
-	
+	weather_time = _list[hourIndex]['dt_txt'][11:16]
+	weather_sky = _list[hourIndex]['weather'][0]['description']
+	temp_real = _list[hourIndex]['main']['temp']
+	temp_feels_like = _list[hourIndex]['main']['feels_like']
+	weather_hourly_text = f"{weather_time} - {weather_sky}, {temp_real}C (відчувається як {temp_feels_like}) \n"
+	return weather_hourly_text
 
-list_1 = _list[0]['dt_txt'][11:16]
-
-sky = _list[0]['weather'][0]['description']
-
-print(list_1)
-
-#def celsius(kelvin):
-	#c = kelvin-273.15
-	#return c
-
-
-#for i in range(len(_list)):
-	#print(_list[i]['dt_txt'])
