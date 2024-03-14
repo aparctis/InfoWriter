@@ -14,6 +14,8 @@ gas_95 = block_gas.find_all('td')[2].text
 gas_dizel = block_gas.find_all('td')[7].text
 gas_gaz = block_gas.find_all('td')[12].text
 
+gas_all = (f"Бензин А-95 - {gas_95}\nДизельне паливо - {gas_dizel}\nГаз автомобільний - {gas_gaz}\n")
+
 # CURENCY
 link_curency = "https://minfin.com.ua/ua/currency/vyshgorod/"
 responseCurency = requests.get(link_curency).text
@@ -27,6 +29,18 @@ _dollar_sell = (block_curency[22].text)[:5]
 _euro_buy = (block_curency[24].text)[:5]
 _euro_sell = (block_curency[25].text)[:5]
 
+# CURENCY KYIV
+link_curency_kiev = "https://minfin.com.ua/ua/currency/kiev/"
+responseCurency_kiev = requests.get(link_curency_kiev).text
+
+soup_curency_kiev = BeautifulSoup(responseCurency_kiev, 'lxml')
+block_curency_kiev = soup_curency_kiev.find_all('td')
+
+_dollar_buy_kiev = (block_curency_kiev[21].text)[:5]
+_dollar_sell_kiev = (block_curency_kiev[22].text)[:5]
+
+_euro_buy_kiev = (block_curency_kiev[24].text)[:5]
+_euro_sell_kiev = (block_curency_kiev[25].text)[:5]
 
 #WEATHER
 weather_key = "495a964eee926a3247a8b3e05ea862f9"
