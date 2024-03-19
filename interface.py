@@ -92,18 +92,18 @@ def check():
     text_field.delete("1.0", "end")
     newText=""
     #CURENCY
+    if advantage_var.get():
+        newText = newText + postwriter.avantage_info
     if currency_kiev_var.get():
         newText = newText + postwriter.currency_info_kiev
     if currency_var.get():
         newText = newText + postwriter.currency_info
-    if advantage_var.get():
-        newText = newText + postwriter.avantage_info
+    if weather_var.get():
+        newText = newText + postwriter.weather_for_next_x_hours(weather_hours_scale.get())
     if church_var.get():
         newText = newText + postwriter.gpt_church()
     if holiday_var.get():
         newText = newText + postwriter.gpt_church()
-    if weather_var.get():
-        newText = newText + postwriter.weather_for_next_x_hours(weather_hours_scale.get())
 
     text_field.clipboard_clear()
     text_field.insert("1.0", newText + "\n")
@@ -111,14 +111,15 @@ def check():
 
 
 
+advantage_toggle = Checkbutton(buttons_frame, text="Авантаж 7", variable=advantage_var)
+advantage_toggle.pack(anchor="w", padx=10, pady=5)
+
 currency_toggle = Checkbutton(buttons_frame, text="Курс валют Вишгород", variable=currency_var)
 currency_toggle.pack(anchor="w", padx=10, pady=5)
 
 currency_kiev_toggle = Checkbutton(buttons_frame, text="Курс валют Київ", variable=currency_kiev_var)
 currency_kiev_toggle.pack(anchor="w", padx=10, pady=5)
 
-advantage_toggle = Checkbutton(buttons_frame, text="Авантаж 7", variable=advantage_var)
-advantage_toggle.pack(anchor="w", padx=10, pady=5)
 
 """""
 church_toggle = Checkbutton(buttons_frame, text="Церковные праздники", variable=church_var)
@@ -126,7 +127,9 @@ church_toggle.pack(anchor="w", padx=10, pady=5)
 
 holiday_toggle = Checkbutton(buttons_frame, text="Праздники", variable=holiday_var)
 holiday_toggle.pack(anchor="w", padx=10, pady=5)
+
 """
+
 weather_toggle = Checkbutton(buttons_frame, text="Погода", variable=weather_var)
 weather_toggle.pack(anchor="w", padx=10, pady=5)
 

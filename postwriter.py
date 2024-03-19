@@ -43,4 +43,4 @@ def weather_for_next_x_hours(hours:int) ->str:
 
 currency_info = f"\nВ обмінних пунктах Вишгорода сьогодні такий середній курс: \nДоллар: {_dollar_buy}/{_dollar_sell} \nЄвро: {_euro_buy}/{_euro_sell}\n"
 avantage_info = f"\nУ мережі АЗС «Авантаж 7» сьогодні такі ціни:\n{parsing.gas_all}\n"
-currency_info_kiev = f"\nВ обмінних пунктах Киэва сьогодні такий середній курс: \nДоллар: {_dollar_buy_kiev}/{_dollar_sell_kiev} \nЄвро: {_euro_buy_kiev}/{_euro_sell_kiev}\n"
+currency_info_kiev = f"\nВ обмінних пунктах Києва сьогодні такий середній курс: \nДолар: {_dollar_buy_kiev}/{_dollar_sell_kiev} \nЄвро: {_euro_buy_kiev}/{_euro_sell_kiev}\n"
