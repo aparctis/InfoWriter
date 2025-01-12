@@ -42,6 +42,8 @@ _dollar_sell_kiev = (block_curency_kiev[22].text)[:5]
 _euro_buy_kiev = (block_curency_kiev[24].text)[:5]
 _euro_sell_kiev = (block_curency_kiev[25].text)[:5]
 
+#
+
 #WEATHER
 weather_key = "495a964eee926a3247a8b3e05ea862f9"
 lat = 50.59578586580147
